@@ -11,7 +11,8 @@ export default function First() {
   const ZoomInScrollOut = batch(StickyIn(), FadeIn(), ZoomIn());
   const FadeUp = batch(Fade(), Move(), Sticky());
   return (
-  <ScrollContainer>
+    <div className="pl-8">
+      <ScrollContainer>
     <ScrollContainer>
         <ScrollPage>
           <Animator animation={batch(Fade(), MoveOut(0, -200))}>
@@ -50,5 +51,7 @@ export default function First() {
       </Animator>
     </ScrollPage>
   </ScrollContainer>
+    </div>
+  
   )
 }
