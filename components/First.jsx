@@ -1,4 +1,3 @@
-import React from 'react'
 import dynamic from "next/dynamic";
 const Animator = dynamic(
   import("react-scroll-motion").then((it) => it.Animator),
@@ -6,21 +5,50 @@ const Animator = dynamic(
 );
 
 import { ScrollContainer, ScrollPage, batch, Fade, FadeIn, FadeOut, Move, MoveIn, MoveOut, Sticky, StickyIn, StickyOut, Zoom, ZoomIn, ZoomOut } from "react-scroll-motion";
-
+import Hero from '../components/Hero'
 
 export default function First() {
+  const ZoomInScrollOut = batch(StickyIn(), FadeIn(), ZoomIn());
+  const FadeUp = batch(Fade(), Move(), Sticky());
   return (
+  <ScrollContainer>
     <ScrollContainer>
         <ScrollPage>
-            <div className='h-screen flex justify-center items-center'>
-                <div className="text-center">
-                    <h1 className='text-3xl font-bold'><Animator animation={MoveIn(-1000, 0)}>Hello Guys 👋🏻</Animator></h1>
-                    <h1 className='text-3xl font-bold text-[#4b0303]'><Animator animation={MoveIn(1000, 0)}>Nice to meet you 🙋🏻‍♀️</Animator></h1>
-                    <p className='mt-12 underline'><Animator animation={MoveOut(1000, 0)}>Scroll down to continue</Animator></p>
-                    <p className='mt-12 underline'><Animator animation={MoveOut(1000, 0)}>Enjoy</Animator></p>
-                </div>
-            </div>
+          <Animator animation={batch(Fade(), MoveOut(0, -200))}>
+           <Hero />
+          </Animator>
         </ScrollPage>
     </ScrollContainer>
+    <ScrollPage>
+      <Animator animation={ZoomInScrollOut}>
+        <span style={{ fontSize: "40px" }}>I'm Simple_Soul ✨</span>
+      </Animator>
+    </ScrollPage>
+    <ScrollPage>
+      <Animator animation={FadeUp}>
+        <span style={{ fontSize: "40px" }}>A Front-end developer ⛅️</span>
+      </Animator>
+    </ScrollPage>
+    <ScrollPage>
+      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }} >
+        <span style={{ fontSize: "40px" }}>
+          <Animator animation={MoveIn(-1000, 0)}>Hello Guys 👋🏻</Animator>
+          <Animator animation={MoveIn(1000, 0)}>Nice to meet you 🙋🏻‍♀️</Animator>
+          - I'm Dante Chun -
+          <Animator animation={MoveOut(1000, 0)}>Good bye ✋🏻</Animator>
+          <Animator animation={MoveOut(-1000, 0)}>See you 💛</Animator>
+        </span>
+      </div>
+    </ScrollPage>
+    <ScrollPage>
+      <Animator animation={batch(Fade(), Sticky())}>
+        <span style={{ fontSize: "40px" }}>Done</span>
+        <br/>
+        <span style={{ fontSize: "30px" }}>
+          There's FadeAnimation, MoveAnimation, StickyAnimation, ZoomAnimation
+        </span>
+      </Animator>
+    </ScrollPage>
+  </ScrollContainer>
   )
 }
