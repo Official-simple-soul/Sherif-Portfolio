@@ -1,16 +1,19 @@
+import { useState, useEffect } from 'react';
 
-import { useState,useEffect } from 'react'
-
-export default function Loading({loading, setLoading}) {
-
-
-  
-
+export default function Loading({ loading, setLoading }) {
   useEffect(() => {
-      setTimeout(() =>{setLoading(false)},5000);
-  })
-  
-  return (<div className='spinner-wrapper'>
-    <div className="spinner"></div><h1 className='mt-[35%] text-[12px]'>Please wait, loading simple-soul's screens</h1></div>)
-}
+    setTimeout(() => {
+      setLoading(false);
+    }, 5000);
+  });
 
+  return (
+    <div className="spinner-wrapper">
+      <div className="spinner"></div>
+      <div className="mt-[45%] text-[12px] text-center">
+        <h1>Please wait...</h1>
+        <p className='mt-4'>loading simple-soul's screens</p>
+      </div>
+    </div>
+  );
+}

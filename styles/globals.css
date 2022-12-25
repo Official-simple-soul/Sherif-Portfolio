@@ -135,9 +135,9 @@ as {
 }
 .spinner {
   position: absolute;
-  left: 45%;
+  left: 42%;
   top: 45%;
-  transform: translate(-45%, -45%);
+  transform: translate(-42%, -45%);
   height:60px;
   width:60px;
   margin:0px auto;
