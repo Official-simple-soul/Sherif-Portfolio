@@ -23,7 +23,7 @@ export default function Works() {
   };
 
   return (
-    <section className="h-screen px-4 pl-12" id="work">
+    <section className="h-screen px-4 pl-12 mt-20" id="work">
       <h1 className="mb-4 text-center  font-bold text-3xl w-80 mx-auto">
         SOME OF MY WORK
       </h1>
