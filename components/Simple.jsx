@@ -10,7 +10,7 @@ export default function Simple() {
               alt='simle'
               width={500}
               height={500}
-              className=''
+              className='rounded-xl'
               />
               </div>
             </div>    

@@ -7,6 +7,9 @@ const Animator = dynamic(
 import { ScrollContainer, ScrollPage, batch, Fade, FadeIn, FadeOut, Move, MoveIn, MoveOut, Sticky, StickyIn, StickyOut, Zoom, ZoomIn, ZoomOut } from "react-scroll-motion";
 import Hero from '../components/Hero'
 import Simple from '../components/Simple'
+import FrontEnd from '../components/FrondEnd'
+import WhatIDo from '../components/WhatIDo'
+import Skill from '../components/Skill'
 
 export default function First() {
   const ZoomInScrollOut = batch(StickyIn(), FadeIn(), ZoomIn());
@@ -28,27 +31,14 @@ export default function First() {
     </ScrollPage>
     <ScrollPage>
       <Animator animation={FadeUp}>
-        <span style={{ fontSize: "40px" }}>A Front-end developer ⛅️</span>
+        <FrontEnd />
       </Animator>
     </ScrollPage>
     <ScrollPage>
-      <div style={{ display: "flex", justifyContent: "end", alignItems: "center", height: "100%" }} className='w-[80%] mx-auto'>
-        <span style={{ fontSize: "18px" }}>
-          <Animator animation={MoveIn(-1000, 0)}>I write HTML, CSS, Bootstrap,</Animator>
-          <Animator animation={MoveIn(1000, 0)}>Tailwind, Javascript, ReactJs and NextJs.</Animator>
-          <Animator animation={MoveOut(1000, 0)}> I have 27 months experience working</Animator>
-          <Animator animation={MoveOut(-1000, 0)}>individual projects and team projects</Animator>
-        </span>
-      </div>
+      <WhatIDo Animator={Animator} MoveIn={MoveIn} MoveOut={MoveOut}/>
     </ScrollPage>
     <ScrollPage>
-      <Animator animation={batch(Fade(), Sticky())}>
-        <h1 style={{ fontSize: "40px" }}>Enjoy</h1>
-
-        <h1 style={{ fontSize: "30px" }} className='mt-8'>
-          There's more coming soon
-        </h1>
-      </Animator>
+      <Skill Animator={Animator} MoveIn={MoveIn} MoveOut={MoveOut}/>
     </ScrollPage>
   </ScrollContainer>
     </div>
