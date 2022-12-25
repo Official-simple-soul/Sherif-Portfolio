@@ -32,7 +32,7 @@ const Footer =()=> {
                         <label htmlFor="" className="text-textcolor">Phone Number</label>
                         <input className="placeholder:text-[12px] rounded mx-auto block mt-2 w-full h-10 mb-4 bg-transparent border-textcolor border px-2"
                         type="text" 
-                        placeholder="E.g simple-soul@mymail.com"
+                        placeholder="E.g 08122321123"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         />
