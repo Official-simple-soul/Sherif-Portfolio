@@ -1,14 +1,24 @@
 import { useState } from "react";
 
 const Footer =()=> {
-    const [name, setName] = useState("");
-
+    const [name, setName] = useState({
+        email: '',
+        number: '',
+        text: ''
+    });
+const {email, number, text} = name
     const handleSubmit = (event) => {
-        event.preventDefault();
-        name.indexOf('@') < 1?alert('Please input a valid email'):
-        alert(`Hi ${name.slice(0, name.indexOf('@'))}, thank you for subscribing to my blog`);
-        setName('')
+        setName({
+            email: '',
+            number: '',
+            text: ''
+        })
     }
+    const handleInput = (e) => {
+        setName({...name, [e.target.name]: e.target.value})
+        console.log(name)
+    }
+
 
     return (
         <>
@@ -27,26 +37,27 @@ const Footer =()=> {
                         type="email"
                         name="email"
                         placeholder="E.g simple-soul@mymail.com"
-                        value={name}
+                        value={email}
                         onChange={handleInput}
                         required
                         />
                         <label htmlFor="" className="text-textcolor">Phone Number</label>
                         <input className="placeholder:text-[12px] rounded mx-auto block mt-2 w-full h-10 mb-4 bg-transparent border-textcolor border px-2"
-                        type="number"
-                        name="number"
-                        placeholder="E.g simple-soul@mymail.com"
-                        value={name}
+                        type="text"
+                        name='number'
+                        placeholder="E.g 08122321123"
+                        value={number}
                         onChange={handleInput}
                         />
                         <label htmlFor="" className="text-textcolor">Your Message</label>
                         <textarea className="placeholder:text-[12px] rounded mx-auto block mt-2 w-full mb-4 bg-transparent border-textcolor border px-2"
                         rows='4'
                         placeholder="write us your message"
-                        value={name}
+                        value={text}
+                        name='text'
                         onChange={handleInput}
                         ></textarea>
-                        <input type="submit" value='Subscribe' className="rounded border border-primary text-textcolor px-3 py-1 rounded-sm" />
+                        <input type="submit" value='Subscribe' onClick={handleSubmit} className="cursor-pointer rounded border border-primary text-textcolor px-3 py-1 rounded-sm" />
                     </form>
                     </div>
                 </div>
