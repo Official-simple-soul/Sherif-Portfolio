@@ -24,24 +24,26 @@ const Footer =()=> {
                     <form onSubmit={handleSubmit} className=''>
                         <label htmlFor="" className="text-textcolor">Email</label>
                         <input className="placeholder:text-[12px] rounded mx-auto block mt-2 w-full h-10 mb-4 bg-transparent border-textcolor border px-2"
-                        type="text" 
+                        type="email"
+                        name="email"
                         placeholder="E.g simple-soul@mymail.com"
                         value={name}
-                        onChange={(e) => setName(e.target.value)}
+                        onChange={handleInput}
+                        required
                         />
                         <label htmlFor="" className="text-textcolor">Phone Number</label>
                         <input className="placeholder:text-[12px] rounded mx-auto block mt-2 w-full h-10 mb-4 bg-transparent border-textcolor border px-2"
                         type="text" 
                         placeholder="E.g simple-soul@mymail.com"
                         value={name}
-                        onChange={(e) => setName(e.target.value)}
+                        onChange={handleInput}
                         />
                         <label htmlFor="" className="text-textcolor">Your Message</label>
                         <textarea className="placeholder:text-[12px] rounded mx-auto block mt-2 w-full mb-4 bg-transparent border-textcolor border px-2"
                         rows='4'
                         placeholder="write us your message"
                         value={name}
-                        onChange={(e) => setName(e.target.value)}
+                        onChange={handleInput}
                         ></textarea>
                         <input type="submit" value='Subscribe' className="rounded border border-primary text-textcolor px-3 py-1 rounded-sm" />
                     </form>
