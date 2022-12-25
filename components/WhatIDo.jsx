@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function WhatIDo({Animator, MoveIn, MoveOut}) {
   return (
-    <div className='h-screen'>
+    <div className='h-screen' id='about'>
         <div style={{ display: "flex", justifyContent: "end", alignItems: "center", height: "100%" }} className='w-[80%] mx-auto'>
             <span style={{ fontSize: "18px" }} className='text-textcolor'>
             <Animator animation={MoveIn(-1000, 0)} className='shadow-lg shadow-[] pl-3 py-1'>I write HTML, CSS, Bootstrap,</Animator>
