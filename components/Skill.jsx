@@ -15,7 +15,7 @@ import {
 
 export default function Skill({ Animator, MoveIn, MoveOut }) {
   return (
-    <div className="h-screen">
+    <div className="h-screen" id='skill'>
       <div
         style={{
           display: 'flex',
@@ -81,13 +81,6 @@ export default function Skill({ Animator, MoveIn, MoveOut }) {
           >
             <FontAwesomeIcon icon={faNode} className='mr-1'/>
             NODEJS
-          </Animator>
-          <Animator
-            animation={MoveOut(-1000, 0)}
-            className="mt-8 shadow-lg shadow-[] pl-3 py-1 text-[#0C2B3D] rounded-lg"
-          >
-            <FontAwesomeIcon icon={faDev} className="mr-1"/>
-            Development
           </Animator>
         </span>
       </div>
