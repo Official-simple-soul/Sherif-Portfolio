@@ -54,12 +54,12 @@ export default function Works() {
                 <h5 className="absolute hidden">{id}</h5>
                 <div className="flex justify-center items-center space-x-4">
                     <Link href={link} target="_blank">
-                    <button class="text-[10px] md:text-4xl text-textcolor bg-black border-2 border-primary rounded-lg mt-6 p-2">
+                    <button class="text-[10px] md:text-2xl text-textcolor bg-black border-2 border-primary rounded-lg mt-6 p-2">
                         Go Live
                     </button>
                     </Link>
                     <Link href={code} target="_blank">
-                    <button class="text-[10px] md:text-4xl text-textcolor bg-black border-2 border-primary rounded-lg mt-6 p-2  work-title">
+                    <button class="text-[10px] md:text-2xl text-textcolor bg-black border-2 border-primary rounded-lg mt-6 p-2  work-title">
                         View Code
                     </button>
                     </Link>

@@ -16,7 +16,6 @@ const {email, number, text} = name
     }
     const handleInput = (e) => {
         setName({...name, [e.target.name]: e.target.value})
-        console.log(name)
     }
 
 

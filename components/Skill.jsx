@@ -8,9 +8,10 @@ import {
   faBootstrap,
   faWordpress,
   faNode,
-  faN,
   faDev,
-  faPython
+  faPython,
+  faGit,
+  faN
 } from '@fortawesome/free-brands-svg-icons';
 
 export default function Skill({ Animator, MoveIn, MoveOut }) {
@@ -25,7 +26,7 @@ export default function Skill({ Animator, MoveIn, MoveOut }) {
         }}
         className="w-[80%]"
       >
-        <span style={{ fontSize: '18px' }} className="text-textcolor text-4xl ">
+        <span style={{ fontSize: '18px' }} className="text-textcolor text-4xl md:grid md:grid-cols-3 gap-12">
           <Animator
             animation={MoveIn(-1000, 0)}
             className="shadow-lg shadow-[] pl-3 py-1 text-[#E56027] rounded-lg"
@@ -80,7 +81,14 @@ export default function Skill({ Animator, MoveIn, MoveOut }) {
             className="mt-8 shadow-lg shadow-[] pl-3 py-1 text-[#619756] rounded-lg"
           >
             <FontAwesomeIcon icon={faNode} className='mr-1'/>
-            NODEJS
+            TAILWINDCSS
+          </Animator>
+          <Animator
+            animation={MoveOut(1000, 0)}
+            className="mt-8 shadow-lg shadow-[] pl-3 py-1 text-[white] rounded-lg"
+          >
+            <FontAwesomeIcon icon={faGit} className='mr-1'/>
+            GIT
           </Animator>
         </span>
       </div>

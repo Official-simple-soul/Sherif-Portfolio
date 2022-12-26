@@ -10,7 +10,7 @@ export default function Loading({ loading, setLoading }) {
   return (
     <div className="spinner-wrapper">
       <div className="spinner"></div>
-      <div className="mt-[45%] text-[12px] text-center">
+      <div className="text-white mt-[45%] text-[12px] text-center">
         <h1>Please wait...</h1>
         <p className='mt-4'>loading simple-soul's screens</p>
       </div>
