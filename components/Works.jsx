@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
 import Image from 'next/image';
 import Link from 'next/link';
-import gg from '../public/assets/images/daura.png'
+
 export default function Works() {
   const [activeSlide, setActiveSlide] = useState(1);
   const previousSlide = (id) => {

@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500;600&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500;600&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -78,7 +79,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: 'Unbounded', cursive;
+  font-family: 'Pacifico', cursive;
 }
 
 html,
