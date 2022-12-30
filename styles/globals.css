@@ -1,5 +1,6 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500;600&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Andika:wght@400;700&display=swap');
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -79,7 +80,8 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: 'Pacifico', cursive;
+  /* font-family: 'Pacifico', cursive; */
+  font-family: 'Andika', sans-serif;
 }
 
 html,
@@ -168,4 +170,11 @@ as {
 @keyframes rotation {
   from {transform: rotate(0deg);}
   to {transform: rotate(359deg);}
+}
+
+
+.ggg {
+  @apply h-screen flex items-center border-r border-secondary 
+  shadow-lg bg-gradient-to-r from-indigo-500 via-purple-500 
+  to-pink-500 fixed z-10 px-1;
 }

@@ -1,4 +1,5 @@
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faSearch } from "@fortawesome/free-solid-svg-icons"
 export default function Hero({ScrollContainer}) {
   return (
           <div className="ml-4 text-center w-full px-8 flex justify-center items-center h-screen" id="hero">

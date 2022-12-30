@@ -2,14 +2,11 @@ import React, {useState} from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import { Inter } from '@next/font/google';
-import First from '../components/First';
-import Intro from '../components/Intro';
-import Works from '../components/Works';
-import Footer from '../components/Footer';
+import Main from '../components/Main'
 import Loading from '../components/Loading'
 
 const inter = Inter({ subsets: ['latin'] });
-
+// const Main = import('../components/Main')
 export default function Home() {
   const [loading, setLoading] = useState(true);
   return (
@@ -26,10 +23,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="bg-[#000000e1] text-white">
-        <Intro />
-        <First />
-        <Works />
-        <Footer />
+        <Main />
       </main>
       </>
     }
