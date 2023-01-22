@@ -1,10 +1,15 @@
 import { useState, useRef } from 'react';
 import emailJs from '@emailjs/browser';
+import Modal from '../components/Modal'
 
 const Footer = () => {
   const [success, setSuccess] = useState(false);
-  const [failed, setFailed] = useState(false);
   const [loading, setLoading] = useState(false);
+const [email, setEmail] = useState('')
+const [subject, setSubject] = useState('')
+const [message, setMessage] = useState('')
+const emailNotification = email.slice(0, email.indexOf('@'))
+
 
   const form = useRef();
 
@@ -25,22 +30,18 @@ const Footer = () => {
           console.log(result.text);
           setSuccess(true);
           setLoading(false);
-          setVal({
-            email: '',
-            subject: '',
-            message: '',
-          });
+          setEmail('')
+          setMessage('')
+          setSubject('')
         },
         (error) => {
           console.log(error.text);
-          setFailed(true);
         }
       );
   };
 
   setTimeout(() => {
     setSuccess(false);
-    setFailed(false);
   }, 5000);
 
   return (
@@ -66,6 +67,8 @@ const Footer = () => {
                 className="placeholder:text-[12px] rounded mx-auto block mt-2 w-full h-10 mb-4 bg-transparent border-textcolor border px-2"
                 type="email"
                 name="user_email"
+                value={email}
+                onChange={(e)=>setEmail(e.target.value)}
                 placeholder="E.g simple-soul@mymail.com"
                 required
               />
@@ -77,6 +80,7 @@ const Footer = () => {
                 type="text"
                 name="subject"
                 placeholder=""
+                onChange={(e)=>setSubject(e.target.value)}
               />
               <label htmlFor="" className="text-textcolor">
                 Your Message
@@ -86,6 +90,7 @@ const Footer = () => {
                 rows="4"
                 placeholder="write us your message"
                 name="message"
+                onChange={(e)=>setMessage(e.target.value)}
               ></textarea>
               {loading ? (
                 <div className="flex justify-center items-center cursor-pointer rounded border border-primary">
@@ -105,7 +110,7 @@ const Footer = () => {
               )}
             </form>
           </div>
-          <div
+          {/* <div
             className={`text-black absolute ${
               success
                 ? '-top-36 border-primary-400 text-primary-400'
@@ -119,9 +124,16 @@ const Footer = () => {
                 ? 'Message sent successfully!!!'
                 : 'Message sending error'}
             </h1>
-          </div>
+          </div> */}
         </div>
       </section>
+      {
+        success?
+        <Modal success={success} email={email} report={`Message sent successfully`} col={'green'}/>
+        :
+        <Modal success={success} email={email} report={'Message sending failed!!!'} col={'red'}/>
+
+      }
     </>
   );
 };
