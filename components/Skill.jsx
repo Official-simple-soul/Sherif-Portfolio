@@ -66,7 +66,8 @@ export default function Skill({ Animator, MoveIn, MoveOut }) {
             animation={MoveOut(1000, 0)}
             className="mt-8 shadow-lg shadow-[] pl-3 py-1 text-white rounded-lg"
           >
-            <FontAwesomeIcon icon={faN} className='mr-1'/>
+            {/* <FontAwesomeIcon icon={faN} className='mr-1'/> */}
+            <span className='mr-1'>NX</span>
             NEXTJS
           </Animator>
           <Animator
@@ -80,7 +81,8 @@ export default function Skill({ Animator, MoveIn, MoveOut }) {
             animation={MoveOut(1000, 0)}
             className="mt-8 shadow-lg shadow-[] pl-3 py-1 text-[#619756] rounded-lg"
           >
-            <FontAwesomeIcon icon={faNode} className='mr-1'/>
+            {/* <FontAwesomeIcon icon={faNode} className='mr-1'/> */}
+            <span className='mr-1'>TW</span>
             TAILWINDCSS
           </Animator>
           <Animator
