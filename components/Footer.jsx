@@ -1,18 +1,16 @@
 import { useState, useRef } from 'react';
 import emailJs from '@emailjs/browser';
-import Modal from '../components/Modal'
+import Modal from '../components/Modal';
 
 const Footer = () => {
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
-const [email, setEmail] = useState('')
-const [subject, setSubject] = useState('')
-const [message, setMessage] = useState('')
-const emailNotification = email.slice(0, email.indexOf('@'))
-
+  const [showModal, setShowModal] = useState(false);
+  const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
 
   const form = useRef();
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,18 +28,21 @@ const emailNotification = email.slice(0, email.indexOf('@'))
           console.log(result.text);
           setSuccess(true);
           setLoading(false);
-          setEmail('')
-          setMessage('')
-          setSubject('')
+          setShowModal(true)
+          setEmail('');
+          setMessage('');
+          setSubject('');
         },
         (error) => {
           console.log(error.text);
+          setShowModal(true);
+          setLoading(false);
         }
       );
   };
 
   setTimeout(() => {
-    setSuccess(false);
+    setShowModal(false);
   }, 5000);
 
   return (
@@ -68,7 +69,7 @@ const emailNotification = email.slice(0, email.indexOf('@'))
                 type="email"
                 name="user_email"
                 value={email}
-                onChange={(e)=>setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="E.g simple-soul@mymail.com"
                 required
               />
@@ -80,7 +81,8 @@ const emailNotification = email.slice(0, email.indexOf('@'))
                 type="text"
                 name="subject"
                 placeholder=""
-                onChange={(e)=>setSubject(e.target.value)}
+                value={subject}
+                onChange={(e) => setSubject(e.target.value)}
               />
               <label htmlFor="" className="text-textcolor">
                 Your Message
@@ -90,7 +92,8 @@ const emailNotification = email.slice(0, email.indexOf('@'))
                 rows="4"
                 placeholder="write us your message"
                 name="message"
-                onChange={(e)=>setMessage(e.target.value)}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
               ></textarea>
               {loading ? (
                 <div className="flex justify-center items-center cursor-pointer rounded border border-primary">
@@ -110,30 +113,21 @@ const emailNotification = email.slice(0, email.indexOf('@'))
               )}
             </form>
           </div>
-          {/* <div
-            className={`text-black absolute ${
-              success
-                ? '-top-36 border-primary-400 text-primary-400'
-                : failed
-                ? 'border-[red] text-white bg-[red]'
-                : 'opacity-0 -top-48'
-            } transition-all ease-in-out duration-500 left-[17%] border-b px-8 py-1 bg-textcolor rounded-lg `}
-          >
-            <h1>
-              {success
-                ? 'Message sent successfully!!!'
-                : 'Message sending error'}
-            </h1>
-          </div> */}
         </div>
       </section>
-      {
-        success?
-        <Modal success={success} email={email} report={`Message sent successfully`} col={'green'}/>
-        :
-        <Modal success={success} email={email} report={'Message sending failed!!!'} col={'red'}/>
-
-      }
+      {showModal && success ? (
+        <Modal
+          success={success}
+          email={email}
+          showModal={showModal}
+        />
+      ) : (
+        <Modal
+          success={success}
+          email={email}
+          showModal={showModal}
+        />
+      )}
     </>
   );
 };
